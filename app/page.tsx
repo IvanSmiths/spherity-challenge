@@ -1,19 +1,11 @@
+import { BatteryCharts } from "@/components/battery/batteryCharts";
+import { BatteryInfo } from "@/components/battery/batteryInfo";
+import { BatteryMaterials } from "@/components/battery/batteryMaterials";
+import { BatteryMetrics } from "@/components/battery/batteryMetrics";
+import { BatteryProof } from "@/components/battery/batteryProof";
 import Header from "@/components/home/header";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
 import { BreadcrumbWrapper } from "@/components/ui/breadcrumb/breadcrumb-wrapper";
-import CardTable from "@/components/ui/cards/card-table";
-import CardWrapper from "@/components/ui/cards/card-wrapper";
-import { BarChart } from "@/components/ui/charts/bar-chart";
-import { materialsColumns } from "@/components/ui/table/columns";
-import { DataTable } from "@/components/ui/table/data-table";
 import { getBattery } from "@/services/getBattery";
-import { Material, Proof } from "@/types/materialTypes";
 import { Atom, BatteryFull, ChartBarIncreasing } from "lucide-react";
 
 export default async function Home() {
@@ -28,35 +20,6 @@ export default async function Home() {
     return <div>Something went wrong on our side. Please notify us.</div>;
   }
 
-  const activeMaterials: Material[] =
-    battery[1].credentialSubject.cellChemistry.anodeActiveMaterials;
-
-  const electrolyteComposition: Material[] =
-    battery[1].credentialSubject.cellChemistry.electrolyteComposition;
-
-  const proof: Proof = battery[1].proof;
-
-  const type: string = battery[1].type[1];
-
-  const ratedCapacity: string = battery[1].credentialSubject.ratedCapacity;
-
-  const voltageMaximum: string = battery[1].credentialSubject.voltageMaximum;
-
-  const voltageNominal: string = battery[1].credentialSubject.voltageNominal;
-
-  const lifeCycleStatus: string = battery[1].credentialSubject.lifeCycleStatus;
-
-  const performanceMetrics = battery[0].credentialSubject.performanceMetrics;
-
-  const safetyDurabilityTests =
-    battery[0].credentialSubject.safetyDurabilityTests;
-
-  const batteryCellHomologation =
-    battery[0].credentialSubject.batteryCellHomologation;
-
-  const temperatureToleranceTests =
-    battery[0].credentialSubject.temperatureToleranceTests;
-
   const issuanceDate: string = new Intl.DateTimeFormat("en-US", {
     day: "2-digit",
     month: "long",
@@ -67,72 +30,39 @@ export default async function Home() {
     <div className="flex flex-col gap-5 p-10">
       <BreadcrumbWrapper />
       <Header isInFirstSection title="Battery" icon={BatteryFull} />
-      <Badge className="w-fit" variant="secondary">
-        Type: {type}
-      </Badge>
-      <div className="flex flex-wrap gap-5">
-        <CardWrapper title="Issuance Date" description={issuanceDate} />
-        <CardWrapper title="Rated capacity" description={ratedCapacity} />
-        <CardWrapper title="Voltage Maximum" description={voltageMaximum} />
-        <CardWrapper title="Voltage Nominal" description={voltageNominal} />
-        <CardWrapper title="Life Cycle Status" description={lifeCycleStatus} />
-      </div>
+      <BatteryInfo
+        type={battery[1].type[1]}
+        issuanceDate={issuanceDate}
+        ratedCapacity={battery[1].credentialSubject.ratedCapacity}
+        voltageMaximum={battery[1].credentialSubject.voltageMaximum}
+        voltageNominal={battery[1].credentialSubject.voltageNominal}
+        lifeCycleStatus={battery[1].credentialSubject.lifeCycleStatus}
+      />
       <Header title="Materials" icon={Atom} />
-      <div className="flex gap-5">
-        <DataTable
-          title="Active Materials"
-          columns={materialsColumns}
-          data={activeMaterials}
-        />
-        <DataTable
-          title="Electrolyte Composition"
-          columns={materialsColumns}
-          data={electrolyteComposition}
-        />
-      </div>
+      <BatteryMaterials
+        activeMaterials={
+          battery[1].credentialSubject.cellChemistry.anodeActiveMaterials
+        }
+        electrolyteComposition={
+          battery[1].credentialSubject.cellChemistry.electrolyteComposition
+        }
+      />
       <Header title="Charts" icon={Atom} />
-      <div className="flex gap-5">
-        <BarChart />
-        <BarChart />
-      </div>
+      <BatteryCharts />
       <Header title="Performance Metrics" icon={ChartBarIncreasing} />
-      <div className="flex flex-col gap-5">
-        <div className="flex gap-5">
-          <CardTable title="Performance Metrics" content={performanceMetrics} />
-          <CardTable
-            title="Safety Durability Tests"
-            content={safetyDurabilityTests}
-          />
-        </div>
-        <div className="flex gap-5">
-          <CardTable
-            title="Temperature Tolerance Tests"
-            content={temperatureToleranceTests}
-          />
-          <CardTable
-            title="Battery Cell Homologation"
-            content={batteryCellHomologation}
-          />
-        </div>
-      </div>
-      <div className="flex flex-col gap-5">
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Proof</AccordionTrigger>
-            <AccordionContent>
-              <CardTable content={proof} />
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Proof</AccordionTrigger>
-            <AccordionContent>
-              <CardTable content={proof} />
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
+      <BatteryMetrics
+        performanceMetrics={battery[0].credentialSubject.performanceMetrics}
+        safetyDurabilityTests={
+          battery[0].credentialSubject.safetyDurabilityTests
+        }
+        temperatureToleranceTests={
+          battery[0].credentialSubject.temperatureToleranceTests
+        }
+        batteryCellHomologation={
+          battery[0].credentialSubject.batteryCellHomologation
+        }
+      />
+      <BatteryProof proof={battery[1].proof} />
     </div>
   );
 }
