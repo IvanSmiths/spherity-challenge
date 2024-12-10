@@ -33,11 +33,9 @@ export function BarChart({
   chartData: Material[];
   label: string;
 }) {
-  console.log(chartData);
-
   return (
-    <>
-      <h2>{label}</h2>
+    <div className="relative w-full">
+      <h2 className="absolute left-0 top-0 z-10 text-lg font-bold">{label}</h2>
       <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
         <RechartsBarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
@@ -57,6 +55,6 @@ export function BarChart({
           />
         </RechartsBarChart>
       </ChartContainer>
-    </>
+    </div>
   );
 }
