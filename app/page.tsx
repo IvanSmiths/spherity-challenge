@@ -1,20 +1,20 @@
-import { getBattery } from "@/services/getBattery";
 import Header from "@/components/home/header";
-import { Material, Proof } from "@/types/materialTypes";
-import CardTable from "@/components/ui/card-table";
-import CardWrapper from "@/components/ui/card-wrapper";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Atom, BatteryFull, ChartBarIncreasing } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { BreadcrumbWrapper } from "@/components/ui/breadcrumb-wrapper";
-import { DataTable } from "@/components/ui/table/data-table";
-import { materialsColumns } from "@/components/ui/table/columns";
+import { BreadcrumbWrapper } from "@/components/ui/breadcrumb/breadcrumb-wrapper";
+import CardTable from "@/components/ui/cards/card-table";
+import CardWrapper from "@/components/ui/cards/card-wrapper";
 import { BarChart } from "@/components/ui/charts/bar-chart";
+import { materialsColumns } from "@/components/ui/table/columns";
+import { DataTable } from "@/components/ui/table/data-table";
+import { getBattery } from "@/services/getBattery";
+import { Material, Proof } from "@/types/materialTypes";
+import { Atom, BatteryFull, ChartBarIncreasing } from "lucide-react";
 
 export default async function Home() {
   let battery = null;

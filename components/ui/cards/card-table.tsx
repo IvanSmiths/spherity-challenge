@@ -4,7 +4,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/cards/card";
 
 type CardContainerProps = {
   title?: string;
@@ -26,8 +26,8 @@ export default function CardTable({
       <CardContent>
         <div className="flex flex-col space-y-2">
           {Object.entries(content).map(([key, value]) => (
-            <div key={key} className="odd:bg-muted/35 flex items-center p-1">
-              <span className="text-foreground/50 min-w-60 font-medium">
+            <div key={key} className="flex items-center p-1 odd:bg-muted/35">
+              <span className="min-w-60 font-medium text-foreground/50">
                 {key}
               </span>
               <div className="min-w-20 overflow-hidden overscroll-x-auto text-nowrap text-left">

@@ -3,7 +3,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/cards/card";
 import { CircleCheckBig, CircleX } from "lucide-react";
 
 type CardContainerProps = {
