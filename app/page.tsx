@@ -9,11 +9,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Atom, BarChart, BatteryFull } from "lucide-react";
+import { Atom, BatteryFull, ChartBarIncreasing } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { BreadcrumbWrapper } from "@/components/ui/breadcrumb-wrapper";
 import { DataTable } from "@/components/ui/table/data-table";
 import { materialsColumns } from "@/components/ui/table/columns";
+import { BarChart } from "@/components/ui/charts/bar-chart";
 
 export default async function Home() {
   let battery = null;
@@ -76,7 +77,25 @@ export default async function Home() {
         <CardWrapper title="Voltage Nominal" description={voltageNominal} />
         <CardWrapper title="Life Cycle Status" description={lifeCycleStatus} />
       </div>
-      <Header title="Performance Metrics" icon={BarChart} />
+      <Header title="Materials" icon={Atom} />
+      <div className="flex gap-5">
+        <DataTable
+          title="Active Materials"
+          columns={materialsColumns}
+          data={activeMaterials}
+        />
+        <DataTable
+          title="Electrolyte Composition"
+          columns={materialsColumns}
+          data={electrolyteComposition}
+        />
+      </div>
+      <Header title="Charts" icon={Atom} />
+      <div className="flex gap-5">
+        <BarChart />
+        <BarChart />
+      </div>
+      <Header title="Performance Metrics" icon={ChartBarIncreasing} />
       <div className="flex flex-col gap-5">
         <div className="flex gap-5">
           <CardTable title="Performance Metrics" content={performanceMetrics} />
@@ -95,19 +114,6 @@ export default async function Home() {
             content={batteryCellHomologation}
           />
         </div>
-      </div>
-      <Header title="Materials" icon={Atom} />
-      <div className="flex gap-5">
-        <DataTable
-          title="Active Materials"
-          columns={materialsColumns}
-          data={activeMaterials}
-        />
-        <DataTable
-          title="Electrolyte Composition"
-          columns={materialsColumns}
-          data={electrolyteComposition}
-        />
       </div>
       <div className="flex flex-col gap-5">
         <Accordion type="single" collapsible className="w-full">
