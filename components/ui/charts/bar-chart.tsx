@@ -20,11 +20,9 @@ import { Material } from "@/types/materialTypes";
 const chartConfig = {
   materialWeight: {
     label: "Weight",
-    color: "#2563eb",
   },
   materialPercentageMassFraction: {
     label: "Percentage Mass Fraction",
-    color: "#60a5fa",
   },
 } satisfies ChartConfig;
 
