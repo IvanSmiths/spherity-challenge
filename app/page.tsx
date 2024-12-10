@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/accordion";
 import { Atom, BarChart, BatteryFull } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { BreadcrumbWrapper } from "@/components/ui/breadcrumb-wrapper";
 
 export default async function Home() {
   let battery = null;
@@ -62,8 +63,9 @@ export default async function Home() {
   }).format(new Date(battery[1].issuanceDate));
 
   return (
-    <div className="flex flex-col gap-5 px-10">
-      <Header title="Battery" icon={BatteryFull} />
+    <div className="flex flex-col gap-5 p-10">
+      <BreadcrumbWrapper />
+      <Header isInFirstSection title="Battery" icon={BatteryFull} />
       <Badge className="w-fit" variant="secondary">
         Type: {type}
       </Badge>
