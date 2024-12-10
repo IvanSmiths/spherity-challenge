@@ -12,7 +12,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       ref={ref}
       className={cn(
         `bg-card text-card-foreground w-full ${
-          dimensions === "wide" ? "max-w-[40rem]" : "max-w-[15rem]"
+          dimensions === "wide" ? "w-full" : "max-w-[15rem]"
         } rounded-lg border shadow-sm`,
         className,
       )}

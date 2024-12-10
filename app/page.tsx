@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Atom, BatteryFull } from "lucide-react";
+import { Atom, BarChart, BatteryFull } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default async function Home() {
@@ -44,6 +44,17 @@ export default async function Home() {
 
   const lifeCycleStatus: string = battery[1].credentialSubject.lifeCycleStatus;
 
+  const performanceMetrics = battery[0].credentialSubject.performanceMetrics;
+
+  const safetyDurabilityTests =
+    battery[0].credentialSubject.safetyDurabilityTests;
+
+  const batteryCellHomologation =
+    battery[0].credentialSubject.batteryCellHomologation;
+
+  const temperatureToleranceTests =
+    battery[0].credentialSubject.temperatureToleranceTests;
+
   const issuanceDate: string = new Intl.DateTimeFormat("en-US", {
     day: "2-digit",
     month: "long",
@@ -63,8 +74,25 @@ export default async function Home() {
         <CardWrapper title="Voltage Nominal" description={voltageNominal} />
         <CardWrapper title="Life Cycle Status" description={lifeCycleStatus} />
       </div>
-      <div className="flex gap-10">
-        <CardTable title="Proof" content={proof} />
+      <Header title="Performance Metrics" icon={BarChart} />
+      <div className="flex flex-col gap-5">
+        <div className="flex gap-5">
+          <CardTable title="Performance Metrics" content={performanceMetrics} />
+          <CardTable
+            title="Safety Durability Tests"
+            content={safetyDurabilityTests}
+          />
+        </div>
+        <div className="flex gap-5">
+          <CardTable
+            title="Temperature Tolerance Tests"
+            content={temperatureToleranceTests}
+          />
+          <CardTable
+            title="Battery Cell Homologation"
+            content={batteryCellHomologation}
+          />
+        </div>
       </div>
       <Header title="Materials" icon={Atom} />
       <div className="flex gap-5">

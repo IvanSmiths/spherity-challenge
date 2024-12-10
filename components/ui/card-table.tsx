@@ -18,7 +18,7 @@ export default function CardTable({
   description,
 }: CardContainerProps) {
   return (
-    <Card dimensions="wide">
+    <Card className="w-full" dimensions="wide">
       <CardHeader>
         {title && <CardTitle>{title}</CardTitle>}
         {description && <CardDescription>{description}</CardDescription>}
@@ -26,8 +26,8 @@ export default function CardTable({
       <CardContent>
         <div className="flex flex-col space-y-2">
           {Object.entries(content).map(([key, value]) => (
-            <div key={key} className="flex items-center">
-              <span className="text-foreground/50 min-w-40 font-medium">
+            <div key={key} className="odd:bg-muted/35 flex items-center p-1">
+              <span className="text-foreground/50 min-w-60 font-medium">
                 {key}
               </span>
               <div className="min-w-20 overflow-hidden overscroll-x-auto text-nowrap text-left">
