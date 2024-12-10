@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Atom, BatteryFull } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default async function Home() {
   let battery = null;
@@ -33,6 +34,8 @@ export default async function Home() {
 
   const proof: Proof = battery[1].proof;
 
+  const type: string = battery[1].type[1];
+
   const ratedCapacity: string = battery[1].credentialSubject.ratedCapacity;
 
   const voltageMaximum: string = battery[1].credentialSubject.voltageMaximum;
@@ -50,6 +53,9 @@ export default async function Home() {
   return (
     <div className="flex flex-col gap-5 px-10">
       <Header title="Battery" icon={BatteryFull} />
+      <Badge className="w-fit" variant="secondary">
+        Type: {type}
+      </Badge>
       <div className="flex flex-wrap gap-5">
         <CardWrapper title="Issuance Date" description={issuanceDate} />
         <CardWrapper title="Rated capacity" description={ratedCapacity} />
