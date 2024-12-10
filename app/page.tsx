@@ -20,7 +20,7 @@ export default async function Home() {
     battery[1].credentialSubject.cellChemistry.anodeActiveMaterials;
 
   return (
-    <div className="">
+    <div className="flex flex-col gap-20">
       <Header />
       <DataTable columns={columns} data={material} />
     </div>
