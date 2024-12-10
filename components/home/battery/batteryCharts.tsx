@@ -1,10 +1,22 @@
 import { BarChart } from "@/components/ui/charts/bar-chart";
+import { Material } from "@/types/materialTypes";
 
-export function BatteryCharts() {
+interface BatteryChartsProps {
+  activeMaterials: Material[];
+  electrolyteComposition: Material[];
+}
+
+export function BatteryCharts({
+  activeMaterials,
+  electrolyteComposition,
+}: BatteryChartsProps) {
   return (
     <div className="flex gap-5">
-      <BarChart />
-      <BarChart />
+      <BarChart label="Active Materials" chartData={activeMaterials} />
+      <BarChart
+        label="Electrolyte Composition"
+        chartData={electrolyteComposition}
+      />
     </div>
   );
-} 
+}

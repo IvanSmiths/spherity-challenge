@@ -48,7 +48,14 @@ export default async function Home() {
         }
       />
       <Header title="Charts" icon={Atom} />
-      <BatteryCharts />
+      <BatteryCharts
+        activeMaterials={
+          battery[1].credentialSubject.cellChemistry.anodeActiveMaterials
+        }
+        electrolyteComposition={
+          battery[1].credentialSubject.cellChemistry.electrolyteComposition
+        }
+      />
       <Header title="Performance Metrics" icon={ChartBarIncreasing} />
       <BatteryMetrics
         performanceMetrics={battery[0].credentialSubject.performanceMetrics}
