@@ -7,16 +7,17 @@ import {
 import CardTable from "@/components/ui/cards/card-table";
 import { Proof } from "@/types/materialTypes";
 
-interface BatteryProofProps {
+interface BatteryAccordionProps {
   proof: Proof;
+  label: string;
 }
 
-export function BatteryProof({ proof }: BatteryProofProps) {
+export function BatteryAccordion({ proof, label }: BatteryAccordionProps) {
   return (
     <div className="flex flex-col gap-5">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
-          <AccordionTrigger>Proof</AccordionTrigger>
+          <AccordionTrigger>{label}</AccordionTrigger>
           <AccordionContent>
             <CardTable content={proof} />
           </AccordionContent>
@@ -24,4 +25,4 @@ export function BatteryProof({ proof }: BatteryProofProps) {
       </Accordion>
     </div>
   );
-} 
+}

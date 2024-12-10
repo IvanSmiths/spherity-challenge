@@ -2,7 +2,7 @@ import { BatteryCharts } from "@/components/home/battery/batteryCharts";
 import { BatteryInfo } from "@/components/home/battery/batteryInfo";
 import { BatteryMaterials } from "@/components/home/battery/batteryMaterials";
 import { BatteryMetrics } from "@/components/home/battery/batteryMetrics";
-import { BatteryProof } from "@/components/home/battery/batteryProof";
+import { BatteryAccordion } from "@/components/home/battery/batteryAccordion";
 import Header from "@/components/home/header";
 import { BreadcrumbWrapper } from "@/components/ui/breadcrumb/breadcrumb-wrapper";
 import { getBattery } from "@/services/getBattery";
@@ -69,7 +69,19 @@ export default async function Home() {
           battery[0].credentialSubject.batteryCellHomologation
         }
       />
-      <BatteryProof proof={battery[1].proof} />
+      <BatteryAccordion label="Proof" proof={battery[1].proof} />
+      <BatteryAccordion
+        label="Battery Cell Scan"
+        proof={battery[0].credentialSubject.CTScans.batteryCellScan}
+      />
+      <BatteryAccordion
+        label="Housing and Cathode"
+        proof={battery[0].credentialSubject.CTScans.housingAndTheCathode}
+      />{" "}
+      <BatteryAccordion
+        label="Cathode and Anode"
+        proof={battery[0].credentialSubject.CTScans.casingCathodeAndAnode}
+      />
     </div>
   );
 }
