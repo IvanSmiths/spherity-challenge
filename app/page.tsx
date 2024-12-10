@@ -32,6 +32,8 @@ export default async function Home() {
 
   const voltageNominal: string = battery[1].credentialSubject.voltageNominal;
 
+  const lifeCycleStatus: string = battery[1].credentialSubject.lifeCycleStatus;
+
   const issuanceDate: string = new Intl.DateTimeFormat("en-US", {
     day: "2-digit",
     month: "long",
@@ -46,6 +48,7 @@ export default async function Home() {
         <CardWrapper title="Rated capacity" description={ratedCapacity} />
         <CardWrapper title="Voltage Maximum" description={voltageMaximum} />
         <CardWrapper title="Voltage Nominal" description={voltageNominal} />
+        <CardWrapper title="Voltage Nominal" description={lifeCycleStatus} />
       </div>
       <div className="flex gap-10">
         <CardTable title="Proof" content={proof} />
