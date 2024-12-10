@@ -19,11 +19,11 @@ import { Material } from "@/types/materialTypes";
 
 const chartConfig = {
   materialWeight: {
-    label: "Desktop",
+    label: "Weight",
     color: "#2563eb",
   },
   materialPercentageMassFraction: {
-    label: "Mobile",
+    label: "Percentage Mass Fraction",
     color: "#60a5fa",
   },
 } satisfies ChartConfig;
@@ -51,14 +51,10 @@ export function BarChart({
           />
           <ChartTooltip content={<ChartTooltipContent />} />
           <ChartLegend content={<ChartLegendContent />} />
-          <Bar
-            dataKey="materialWeight"
-            fill="var(--color-desktop)"
-            radius={4}
-          />
+          <Bar dataKey="materialWeight" fill="#1a3fe6" radius={4} />
           <Bar
             dataKey="materialPercentageMassFraction"
-            fill="var(--color-mobile)"
+            fill="#6f88e6"
             radius={4}
           />
         </RechartsBarChart>
