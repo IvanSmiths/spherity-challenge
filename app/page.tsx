@@ -1,8 +1,8 @@
-import { BatteryCharts } from "@/components/battery/batteryCharts";
-import { BatteryInfo } from "@/components/battery/batteryInfo";
-import { BatteryMaterials } from "@/components/battery/batteryMaterials";
-import { BatteryMetrics } from "@/components/battery/batteryMetrics";
-import { BatteryProof } from "@/components/battery/batteryProof";
+import { BatteryCharts } from "@/components/home/battery/batteryCharts";
+import { BatteryInfo } from "@/components/home/battery/batteryInfo";
+import { BatteryMaterials } from "@/components/home/battery/batteryMaterials";
+import { BatteryMetrics } from "@/components/home/battery/batteryMetrics";
+import { BatteryProof } from "@/components/home/battery/batteryProof";
 import Header from "@/components/home/header";
 import { BreadcrumbWrapper } from "@/components/ui/breadcrumb/breadcrumb-wrapper";
 import { getBattery } from "@/services/getBattery";
