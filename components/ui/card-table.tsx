@@ -8,7 +8,7 @@ import {
 
 type CardContainerProps = {
   title: string;
-  description: string;
+  description?: string;
   content: { [key: string]: string };
 };
 

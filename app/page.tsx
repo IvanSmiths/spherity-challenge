@@ -36,11 +36,7 @@ export default async function Home() {
     <div className="flex flex-col gap-10 p-10">
       <Header />
       <div className="flex flex-col gap-10">
-        <CardTable
-          title="Proof"
-          description="Deploy your new project in one-click."
-          content={proof}
-        />
+        <CardTable title="Proof" content={proof} />
         <CardWrapper title="Issuance Date" description={issuanceDate} />
       </div>
       <div>
