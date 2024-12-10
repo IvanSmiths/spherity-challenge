@@ -1,7 +1,5 @@
 import { getBattery } from "@/services/getBattery";
 import Header from "@/components/home/header";
-import { DataTable } from "@/components/table/data-table";
-import { materialsColumns } from "@/components/table/columns";
 import { Material, Proof } from "@/types/materialTypes";
 import CardTable from "@/components/ui/card-table";
 import CardWrapper from "@/components/ui/card-wrapper";
@@ -14,6 +12,8 @@ import {
 import { Atom, BarChart, BatteryFull } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { BreadcrumbWrapper } from "@/components/ui/breadcrumb-wrapper";
+import { DataTable } from "@/components/ui/table/data-table";
+import { materialsColumns } from "@/components/ui/table/columns";
 
 export default async function Home() {
   let battery = null;
