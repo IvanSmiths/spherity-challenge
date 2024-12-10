@@ -5,6 +5,12 @@ import { materialsColumns } from "@/components/table/columns";
 import { Material, Proof } from "@/types/materialTypes";
 import CardTable from "@/components/ui/card-table";
 import CardWrapper from "@/components/ui/card-wrapper";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default async function Home() {
   let battery = null;
@@ -64,6 +70,24 @@ export default async function Home() {
           columns={materialsColumns}
           data={electrolyteComposition}
         />
+      </div>
+      <div className="flex flex-col gap-5">
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Proof</AccordionTrigger>
+            <AccordionContent>
+              <CardTable content={proof} />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Proof</AccordionTrigger>
+            <AccordionContent>
+              <CardTable content={proof} />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   );

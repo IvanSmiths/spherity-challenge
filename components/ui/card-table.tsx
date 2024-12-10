@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 
 type CardContainerProps = {
-  title: string;
+  title?: string;
   description?: string;
   content: { [key: string]: string };
 };
@@ -20,8 +20,8 @@ export default function CardTable({
   return (
     <Card dimensions="wide">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        {title && <CardTitle>{title}</CardTitle>}
+        {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
         <div className="flex flex-col space-y-2">
