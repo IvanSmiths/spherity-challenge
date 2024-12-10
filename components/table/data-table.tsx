@@ -25,10 +25,12 @@ import { Input } from "@/components/ui/input";
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  title: string;
 }
 
 export function DataTable<TData, TValue>({
   columns,
+  title,
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -50,7 +52,8 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="rounded-md border">
-      <div className="w-full p-7">
+      <div className="w-full p-7 pb-2">
+        <h2 className="pb-5 text-2xl font-bold">{title}</h2>
         <Input
           placeholder="Filter by name..."
           value={
@@ -59,7 +62,7 @@ export function DataTable<TData, TValue>({
           onChange={(event): void =>
             table.getColumn("materialName")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm"
+          className="max-w-64"
         />
       </div>
       <Table>

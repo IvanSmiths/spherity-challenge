@@ -1,7 +1,7 @@
 import { getBattery } from "@/services/getBattery";
 import Header from "@/components/home/header";
 import { DataTable } from "@/components/table/data-table";
-import { columns } from "@/components/table/columns";
+import { materialsColumns } from "@/components/table/columns";
 import { Material } from "@/types/materialTypes";
 
 export default async function Home() {
@@ -16,13 +16,27 @@ export default async function Home() {
     return <div>Something went wrong on our side. Please notify us.</div>;
   }
 
-  const material: Material[] =
+  const activeMaterials: Material[] =
     battery[1].credentialSubject.cellChemistry.anodeActiveMaterials;
+
+  const electrolyteComposition: Material[] =
+    battery[1].credentialSubject.cellChemistry.electrolyteComposition;
 
   return (
     <div className="flex flex-col gap-20">
       <Header />
-      <DataTable columns={columns} data={material} />
+      <div>
+        <DataTable
+          title="Active Materials"
+          columns={materialsColumns}
+          data={activeMaterials}
+        />
+        <DataTable
+          title="Electrolyte Composition"
+          columns={materialsColumns}
+          data={electrolyteComposition}
+        />
+      </div>
     </div>
   );
 }
