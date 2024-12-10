@@ -2,8 +2,9 @@ import { getBattery } from "@/services/getBattery";
 import Header from "@/components/home/header";
 import { DataTable } from "@/components/table/data-table";
 import { materialsColumns } from "@/components/table/columns";
-import { Material } from "@/types/materialTypes";
+import { Material, Proof } from "@/types/materialTypes";
 import CardTable from "@/components/ui/card-table";
+import CardWrapper from "@/components/ui/card-wrapper";
 
 export default async function Home() {
   let battery = null;
@@ -23,8 +24,13 @@ export default async function Home() {
   const electrolyteComposition: Material[] =
     battery[1].credentialSubject.cellChemistry.electrolyteComposition;
 
-  const proof = battery[1].proof;
-  console.log(proof);
+  const proof: Proof = battery[1].proof;
+
+  const issuanceDate: string = new Intl.DateTimeFormat("en-US", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(battery[1].issuanceDate));
 
   return (
     <div className="flex flex-col gap-10 p-10">
@@ -35,6 +41,7 @@ export default async function Home() {
           description="Deploy your new project in one-click."
           content={proof}
         />
+        <CardWrapper title="Issuance Date" description={issuanceDate} />
       </div>
       <div>
         <DataTable

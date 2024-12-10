@@ -3,3 +3,15 @@ export type Material = {
   materialWeight: number;
   materialPercentageMassFraction: number;
 };
+
+export type Proof = {
+  jws: string;
+  type: string;
+  created: string;
+  proofPurpose: string;
+  verificationMethod: string;
+};
+
+export type IssuanceDate = {
+  issuanceDate: string;
+};
