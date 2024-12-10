@@ -1,12 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-
-export type Material = {
-  materialName: string;
-  materialWeight: number;
-  materialPercentageMassFraction: number;
-};
+import { Material } from "@/types/materialTypes";
 
 export const columns: ColumnDef<Material>[] = [
   {
