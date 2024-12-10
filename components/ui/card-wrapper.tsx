@@ -15,10 +15,10 @@ export default function CardWrapper({
   description,
 }: CardContainerProps) {
   return (
-    <Card>
+    <Card dimensions="narrow">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardTitle>{description}</CardTitle>
+        <CardDescription>{title}</CardDescription>
       </CardHeader>
     </Card>
   );

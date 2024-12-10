@@ -18,7 +18,7 @@ export default function CardTable({
   description,
 }: CardContainerProps) {
   return (
-    <Card>
+    <Card dimensions="wide">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>

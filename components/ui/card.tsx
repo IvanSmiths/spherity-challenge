@@ -2,19 +2,24 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-const Card = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(
-      "bg-card text-card-foreground w-full max-w-[40rem] rounded-lg border shadow-sm",
-      className,
-    )}
-    {...props}
-  />
-));
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  dimensions?: "wide" | "narrow";
+}
+
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, dimensions, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(
+        `bg-card text-card-foreground w-full ${
+          dimensions === "wide" ? "max-w-[40rem]" : "max-w-[15rem]"
+        } rounded-lg border shadow-sm`,
+        className,
+      )}
+      {...props}
+    />
+  ),
+);
 Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<
