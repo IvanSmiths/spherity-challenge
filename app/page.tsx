@@ -26,6 +26,12 @@ export default async function Home() {
 
   const proof: Proof = battery[1].proof;
 
+  const ratedCapacity: string = battery[1].credentialSubject.ratedCapacity;
+
+  const voltageMaximum: string = battery[1].credentialSubject.voltageMaximum;
+
+  const voltageNominal: string = battery[1].credentialSubject.voltageNominal;
+
   const issuanceDate: string = new Intl.DateTimeFormat("en-US", {
     day: "2-digit",
     month: "long",
@@ -33,11 +39,16 @@ export default async function Home() {
   }).format(new Date(battery[1].issuanceDate));
 
   return (
-    <div className="flex flex-col gap-10 p-10">
+    <div className="flex flex-col gap-5 p-10">
       <Header />
-      <div className="flex flex-col gap-10">
-        <CardTable title="Proof" content={proof} />
+      <div className="flex flex-wrap gap-5">
         <CardWrapper title="Issuance Date" description={issuanceDate} />
+        <CardWrapper title="Rated capacity" description={ratedCapacity} />
+        <CardWrapper title="Voltage Maximum" description={voltageMaximum} />
+        <CardWrapper title="Voltage Nominal" description={voltageNominal} />
+      </div>
+      <div className="flex gap-10">
+        <CardTable title="Proof" content={proof} />
       </div>
       <div>
         <DataTable

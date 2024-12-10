@@ -11,7 +11,3 @@ export type Proof = {
   proofPurpose: string;
   verificationMethod: string;
 };
-
-export type IssuanceDate = {
-  issuanceDate: string;
-};

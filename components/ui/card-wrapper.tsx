@@ -15,10 +15,10 @@ export default function CardWrapper({
   description,
 }: CardContainerProps) {
   return (
-    <Card dimensions="narrow">
+    <Card className="py-3" dimensions="narrow">
       <CardHeader>
         <CardTitle>{description}</CardTitle>
-        <CardDescription>{title}</CardDescription>
+        <CardDescription className="font-bold">{title}</CardDescription>
       </CardHeader>
     </Card>
   );
