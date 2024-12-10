@@ -51,7 +51,7 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="rounded-md border">
+    <div className="w-full rounded-md border">
       <div className="w-full p-7 pb-2">
         <h2 className="pb-5 text-2xl font-bold">{title}</h2>
         <Input

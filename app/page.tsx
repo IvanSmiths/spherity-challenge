@@ -11,6 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Atom, BatteryFull } from "lucide-react";
 
 export default async function Home() {
   let battery = null;
@@ -47,8 +48,8 @@ export default async function Home() {
   }).format(new Date(battery[1].issuanceDate));
 
   return (
-    <div className="flex flex-col gap-5 p-10">
-      <Header />
+    <div className="flex flex-col gap-5 px-10">
+      <Header title="Battery" icon={BatteryFull} />
       <div className="flex flex-wrap gap-5">
         <CardWrapper title="Issuance Date" description={issuanceDate} />
         <CardWrapper title="Rated capacity" description={ratedCapacity} />
@@ -59,7 +60,8 @@ export default async function Home() {
       <div className="flex gap-10">
         <CardTable title="Proof" content={proof} />
       </div>
-      <div>
+      <Header title="Materials" icon={Atom} />
+      <div className="flex gap-5">
         <DataTable
           title="Active Materials"
           columns={materialsColumns}
