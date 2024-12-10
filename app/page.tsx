@@ -1,4 +1,7 @@
 import { getBattery } from "@/services/getBattery";
+import Header from "@/components/home/header";
+import { DataTable } from "@/components/table/data-table";
+import { columns } from "@/components/table/columns";
 
 export default async function Home() {
   let battery = null;
@@ -11,5 +14,15 @@ export default async function Home() {
   if (!battery) {
     return <div>Something went wrong on our side. Please notify us.</div>;
   }
-  return <div className="">Battery data: {JSON.stringify(battery)}</div>;
+
+  console.log(battery[1].credentialSubject.cellChemistry.anodeActiveMaterials);
+  return (
+    <div className="">
+      <Header />
+      <DataTable
+        columns={columns}
+        data={battery[1].credentialSubject.cellChemistry.anodeActiveMaterials}
+      />
+    </div>
+  );
 }
