@@ -12,7 +12,7 @@ type CardContainerProps = {
   content: { [key: string]: string };
 };
 
-export default function CardContainer({
+export default function CardTable({
   content,
   title,
   description,

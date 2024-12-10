@@ -3,7 +3,7 @@ import Header from "@/components/home/header";
 import { DataTable } from "@/components/table/data-table";
 import { materialsColumns } from "@/components/table/columns";
 import { Material } from "@/types/materialTypes";
-import CardContainer from "@/components/ui/card-container";
+import CardTable from "@/components/ui/card-table";
 
 export default async function Home() {
   let battery = null;
@@ -30,7 +30,7 @@ export default async function Home() {
     <div className="flex flex-col gap-10 p-10">
       <Header />
       <div className="flex flex-col gap-10">
-        <CardContainer
+        <CardTable
           title="Proof"
           description="Deploy your new project in one-click."
           content={proof}
