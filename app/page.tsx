@@ -48,7 +48,7 @@ export default async function Home() {
         <CardWrapper title="Rated capacity" description={ratedCapacity} />
         <CardWrapper title="Voltage Maximum" description={voltageMaximum} />
         <CardWrapper title="Voltage Nominal" description={voltageNominal} />
-        <CardWrapper title="Voltage Nominal" description={lifeCycleStatus} />
+        <CardWrapper title="Life Cycle Status" description={lifeCycleStatus} />
       </div>
       <div className="flex gap-10">
         <CardTable title="Proof" content={proof} />
