@@ -13,31 +13,29 @@ import {
 } from "@/components/ui/sidebar/sidebar";
 import * as React from "react";
 
-// This is sample data.
 const data = {
-  versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
   navMain: [
     {
-      title: "Getting Started",
+      title: "Battery",
       url: "#",
       items: [
         {
-          title: "Installation",
-          url: "#",
-        },
-        {
-          title: "Project Structure",
+          title: "Info",
           url: "#",
         },
       ],
     },
     {
-      title: "Building Your Application",
-      url: "#",
+      title: "Materials",
+      url: "#Materials",
       items: [
         {
-          title: "Routing",
-          url: "#",
+          title: "Active Materials",
+          url: "#Active Materials",
+        },
+        {
+          title: "Electrolyte Composition",
+          url: "#Electrolyte Composition",
         },
         {
           title: "Data Fetching",
