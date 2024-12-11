@@ -27,10 +27,10 @@ export default function CardTable({
         <div className="flex flex-col space-y-2">
           {Object.entries(content).map(([key, value]) => (
             <div key={key} className="flex items-center p-1 odd:bg-muted/35">
-              <span className="min-w-60 font-medium text-foreground/50">
+              <span className="min-w-60 text-sm text-foreground/50 md:text-base">
                 {key}
               </span>
-              <div className="min-w-20 overflow-hidden overscroll-x-auto text-nowrap text-left">
+              <div className="min-w-20 overflow-hidden overscroll-x-auto text-nowrap text-left text-sm md:text-base">
                 <span className="h-6 w-full">{value}</span>
               </div>
             </div>
