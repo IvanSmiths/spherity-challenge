@@ -1,4 +1,4 @@
-import * as React from "react";
+import { Separator } from "@/components/ui/separator";
 import {
   Sidebar,
   SidebarContent,
@@ -10,8 +10,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from "@/components/ui/sidebar";
-import { Separator } from "@/components/ui/separator";
+} from "@/components/ui/sidebar/sidebar";
+import * as React from "react";
 
 // This is sample data.
 const data = {

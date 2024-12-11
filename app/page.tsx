@@ -1,19 +1,19 @@
+import { BatteryAccordion } from "@/components/home/battery/batteryAccordion";
 import { BatteryCharts } from "@/components/home/battery/batteryCharts";
 import { BatteryInfo } from "@/components/home/battery/batteryInfo";
 import { BatteryMaterials } from "@/components/home/battery/batteryMaterials";
 import { BatteryMetrics } from "@/components/home/battery/batteryMetrics";
-import { BatteryAccordion } from "@/components/home/battery/batteryAccordion";
 import Header from "@/components/home/header";
 import { BreadcrumbWrapper } from "@/components/ui/breadcrumb/breadcrumb-wrapper";
-import { getBattery } from "@/services/getBattery";
-import { Atom, BatteryFull, ChartBarIncreasing } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { AppSidebar } from "@/components/ui/sidebar/app-sidebar";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import { Separator } from "@/components/ui/separator";
+} from "@/components/ui/sidebar/sidebar";
+import { getBattery } from "@/services/getBattery";
+import { Atom, BatteryFull, ChartBarIncreasing } from "lucide-react";
 
 export default async function Home() {
   let battery = null;
