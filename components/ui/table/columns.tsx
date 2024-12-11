@@ -15,6 +15,6 @@ export const materialsColumns: ColumnDef<Material>[] = [
   },
   {
     accessorKey: "materialPercentageMassFraction",
-    header: columnHeader("% Mass Fraction"),
+    header: columnHeader("Fraction"),
   },
 ];
