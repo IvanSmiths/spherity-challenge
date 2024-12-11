@@ -84,6 +84,19 @@ body {
   }
 }
 
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-md bg-foreground/20;
+}
+
+
 @layer base {
   * {
     @apply border-border;
