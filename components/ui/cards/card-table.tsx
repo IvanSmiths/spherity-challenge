@@ -27,7 +27,10 @@ export default function CardTable({
       <CardContent>
         <div className="flex flex-col space-y-2">
           {Object.entries(content).map(([key, value]) => (
-            <div key={key} className="flex items-center p-1 odd:bg-muted/35">
+            <div
+              key={key}
+              className="flex flex-col items-start p-2 odd:bg-muted/35 sm:flex-row sm:items-center"
+            >
               <span className="min-w-60 text-sm text-foreground/50 md:text-base">
                 {key}
               </span>
