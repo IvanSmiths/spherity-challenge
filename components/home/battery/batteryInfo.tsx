@@ -23,7 +23,7 @@ export function BatteryInfo({
       <Badge className="w-fit" variant="secondary">
         Type: {type}
       </Badge>
-      <div className="flex flex-wrap gap-5">
+      <div id="BatteryInfo" className="flex flex-wrap gap-5">
         <CardWrapper title="Issuance Date" description={issuanceDate} />
         <CardWrapper title="Rated capacity" description={ratedCapacity} />
         <CardWrapper title="Voltage Maximum" description={voltageMaximum} />

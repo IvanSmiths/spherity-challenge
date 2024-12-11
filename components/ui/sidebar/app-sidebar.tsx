@@ -20,8 +20,12 @@ const data = {
       url: "#",
       items: [
         {
-          title: "Info",
+          title: "Battery Section",
           url: "#",
+        },
+        {
+          title: "Info",
+          url: "#BatteryInfo",
         },
       ],
     },
@@ -30,6 +34,10 @@ const data = {
       url: "#Materials",
       items: [
         {
+          title: "Materials Section",
+          url: "#Materials",
+        },
+        {
           title: "Active Materials",
           url: "#Active Materials",
         },
@@ -37,106 +45,43 @@ const data = {
           title: "Electrolyte Composition",
           url: "#Electrolyte Composition",
         },
+      ],
+    },
+    {
+      title: "Charts",
+      url: "#",
+      items: [
         {
-          title: "Data Fetching",
-          url: "#",
-          isActive: true,
+          title: "Charts Section",
+          url: "#Charts",
         },
         {
-          title: "Rendering",
-          url: "#",
+          title: "Active Materials Charts",
+          url: "#Active MaterialsChart",
         },
         {
-          title: "Caching",
-          url: "#",
-        },
-        {
-          title: "Styling",
-          url: "#",
-        },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
+          title: "Electrolyte Composition",
+          url: "#Electrolyte CompositionChart",
         },
       ],
     },
     {
-      title: "API Reference",
-      url: "#",
+      title: "Performance",
+      url: "#Performance Metrics",
       items: [
         {
-          title: "Components",
-          url: "#",
-        },
-        {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
+          title: "Performance Section",
+          url: "#Performance Metrics",
         },
       ],
     },
     {
-      title: "Architecture",
-      url: "#",
+      title: "More data",
+      url: "#More Data",
       items: [
         {
-          title: "Accessibility",
-          url: "#",
-        },
-        {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
+          title: "More Data Section",
+          url: "#More Data",
         },
       ],
     },
@@ -158,7 +103,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <SidebarMenu>
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
+                    <SidebarMenuButton asChild>
                       <a href={item.url}>{item.title}</a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

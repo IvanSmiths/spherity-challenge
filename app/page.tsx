@@ -13,7 +13,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar/sidebar";
 import { getBattery } from "@/services/getBattery";
-import { Atom, BatteryFull, ChartBarIncreasing } from "lucide-react";
+import { Atom, BatteryFull, ChartBarIncreasing, Database } from "lucide-react";
 
 export default async function Home() {
   let battery = null;
@@ -88,6 +88,7 @@ export default async function Home() {
                 battery[0].credentialSubject.batteryCellHomologation
               }
             />
+            <Header title="More Data" icon={Database} />
             <BatteryAccordion label="Proof" proof={battery[1].proof} />
             <BatteryAccordion
               label="Battery Cell Scan"
