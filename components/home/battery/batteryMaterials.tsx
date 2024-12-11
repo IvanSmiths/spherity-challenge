@@ -12,7 +12,7 @@ export function BatteryMaterials({
   electrolyteComposition,
 }: BatteryMaterialsProps) {
   return (
-    <div className="flex gap-5">
+    <div className="flex flex-col gap-5 xl:flex-row">
       <DataTable
         title="Active Materials"
         columns={materialsColumns}
@@ -25,4 +25,4 @@ export function BatteryMaterials({
       />
     </div>
   );
-} 
+}

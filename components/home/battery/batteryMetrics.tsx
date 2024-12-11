@@ -15,14 +15,14 @@ export function BatteryMetrics({
 }: BatteryMetricsProps) {
   return (
     <div className="flex flex-col gap-5">
-      <div className="flex gap-5">
+      <div className="flex flex-col gap-5 xl:flex-row">
         <CardTable title="Performance Metrics" content={performanceMetrics} />
         <CardTable
           title="Safety Durability Tests"
           content={safetyDurabilityTests}
         />
       </div>
-      <div className="flex gap-5">
+      <div className="flex flex-col gap-5 xl:flex-row">
         <CardTable
           title="Temperature Tolerance Tests"
           content={temperatureToleranceTests}

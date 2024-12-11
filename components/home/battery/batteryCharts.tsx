@@ -11,7 +11,7 @@ export function BatteryCharts({
   electrolyteComposition,
 }: BatteryChartsProps) {
   return (
-    <div className="flex gap-5">
+    <div className="flex flex-col gap-5 xl:flex-row">
       <BarChart label="Active Materials" chartData={activeMaterials} />
       <BarChart
         label="Electrolyte Composition"
