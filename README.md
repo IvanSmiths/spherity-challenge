@@ -48,3 +48,7 @@ The application do a single fetch in the home page, and it passes down the data 
 I decided to use Shadcn UI for the components as it provides a set of pre-built, minimally styled components, that are stored directly in this repo, 
 meaning that the components are not imported from a separate package or library, and are fully customizable.
 I used the Tanstack React Table library as it is a robust and well known package to create data tables for displaying the material data with sorting and filtering.
+
+## Spec
+
+Tested on a Windows 11 machine using node version 22.11.0.
