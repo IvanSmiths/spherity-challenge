@@ -32,7 +32,7 @@ export default function SidebarHeader({ battery }: SidebarHeaderProps) {
         <BreadcrumbWrapper />
       </div>
       <div className="flex items-center gap-2">
-        <Button variant="default">
+        <Button className="hidden md:block" variant="default">
           <a href={fileUrl} target="_blank" rel="noreferrer">
             {fileName}
           </a>
