@@ -4,14 +4,14 @@ import Header from "@/components/home/header";
 import { BatteryFull } from "lucide-react";
 import React from "react";
 
-interface BatteryInfoProps {
+type BatteryInfoProps = {
   type: string;
   issuanceDate: string;
   ratedCapacity: string;
   voltageMaximum: string;
   voltageNominal: string;
   lifeCycleStatus: string;
-}
+};
 
 export function BatteryInfo({
   type,

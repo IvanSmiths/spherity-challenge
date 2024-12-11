@@ -20,7 +20,7 @@ export default async function Home() {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <SidebarHeader />
+        <SidebarHeader battery={battery} />
         <App battery={battery} />
       </SidebarInset>
     </SidebarProvider>

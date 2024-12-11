@@ -5,10 +5,10 @@ import Header from "@/components/home/header";
 import { Atom } from "lucide-react";
 import React from "react";
 
-interface BatteryMaterialsProps {
+type BatteryMaterialsProps = {
   activeMaterials: Material[];
   electrolyteComposition: Material[];
-}
+};
 
 export function BatteryMaterials({
   activeMaterials,
