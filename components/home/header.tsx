@@ -13,6 +13,7 @@ export default function Header({
 }: HeaderProps) {
   return (
     <div
+      id={title}
       className={`${isInFirstSection ? "mt-5" : "mt-20"} flex items-center gap-2`}
     >
       <Icon className="h-7 w-7" />
