@@ -34,7 +34,7 @@ export default function CardTable({
               <span className="min-w-60 text-sm text-foreground/50 md:text-base">
                 {key}
               </span>
-              <div className="min-w-20 max-w-[42px] text-nowrap text-left text-sm md:text-base">
+              <div className="min-w-full max-w-[42px] overflow-auto scroll-auto text-nowrap text-left text-sm md:text-base">
                 <span className="h-6">{value}</span>
               </div>
             </div>
