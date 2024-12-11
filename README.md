@@ -38,3 +38,13 @@ API_BATTERY_ENDPOINT=the endpoint of the battery data
 - ESLint for linting
 - Prettier for code formatting
 - PostCSS for CSS processing
+
+## Approach
+
+The application is a single-page application, using server-side render and React Server Components built with Next.js.
+Since there are not so many mutation and the data is mostly static (except for the data tables filtering/sorting functionalities),
+I decided to use React Server Components, as they grant better overall performance.
+The application do a single fetch in the home page, and it passes down the data as props to the child components. The retrieved data is cached by default.
+I decided to use Shadcn UI for the components as it provides a set of pre-built, minimally styled components, that are stored directly in this repo, 
+meaning that the components are not imported from a separate package or library, and are fully customizable.
+I used the Tanstack React Table library as it is a robust and well known package to create data tables for displaying the material data with sorting and filtering.

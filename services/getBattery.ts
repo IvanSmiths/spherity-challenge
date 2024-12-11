@@ -6,7 +6,9 @@ if (!API_BATTERY_ENDPOINT) {
 }
 
 export async function getBattery() {
-  const res: Response = await fetch(`${API_BATTERY_ENDPOINT}`);
+  const res: Response = await fetch(`${API_BATTERY_ENDPOINT}`, {
+    cache: "force-cache",
+  });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
