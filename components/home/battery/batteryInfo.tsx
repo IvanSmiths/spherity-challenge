@@ -1,5 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import CardWrapper from "@/components/ui/cards/card-wrapper";
+import Header from "@/components/home/header";
+import { BatteryFull } from "lucide-react";
+import React from "react";
 
 interface BatteryInfoProps {
   type: string;
@@ -20,6 +23,7 @@ export function BatteryInfo({
 }: BatteryInfoProps) {
   return (
     <>
+      <Header isInFirstSection title="Battery" icon={BatteryFull} />
       <Badge className="w-fit" variant="secondary">
         Type: {type}
       </Badge>

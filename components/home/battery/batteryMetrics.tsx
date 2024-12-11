@@ -1,5 +1,8 @@
 import CardTable from "@/components/ui/cards/card-table";
 import { KeyValuePair } from "@/types/types";
+import Header from "@/components/home/header";
+import { ChartBarIncreasing } from "lucide-react";
+import React from "react";
 
 type BatteryMetricsProps = {
   performanceMetrics: KeyValuePair;
@@ -15,24 +18,27 @@ export function BatteryMetrics({
   batteryCellHomologation,
 }: BatteryMetricsProps) {
   return (
-    <div className="flex flex-col gap-5">
-      <div className="flex flex-col gap-5 xl:flex-row">
-        <CardTable title="Performance Metrics" content={performanceMetrics} />
-        <CardTable
-          title="Safety Durability Tests"
-          content={safetyDurabilityTests}
-        />
+    <>
+      <Header title="Performance Metrics" icon={ChartBarIncreasing} />
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 xl:flex-row">
+          <CardTable title="Performance Metrics" content={performanceMetrics} />
+          <CardTable
+            title="Safety Durability Tests"
+            content={safetyDurabilityTests}
+          />
+        </div>
+        <div className="flex flex-col gap-5 xl:flex-row">
+          <CardTable
+            title="Temperature Tolerance Tests"
+            content={temperatureToleranceTests}
+          />
+          <CardTable
+            title="Battery Cell Homologation"
+            content={batteryCellHomologation}
+          />
+        </div>
       </div>
-      <div className="flex flex-col gap-5 xl:flex-row">
-        <CardTable
-          title="Temperature Tolerance Tests"
-          content={temperatureToleranceTests}
-        />
-        <CardTable
-          title="Battery Cell Homologation"
-          content={batteryCellHomologation}
-        />
-      </div>
-    </div>
+    </>
   );
 }

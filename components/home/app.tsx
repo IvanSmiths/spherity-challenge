@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@/components/home/header";
-import { Atom, BatteryFull, ChartBarIncreasing, Database } from "lucide-react";
+import { Database } from "lucide-react";
 import { BatteryInfo } from "@/components/home/battery/batteryInfo";
 import { BatteryMaterials } from "@/components/home/battery/batteryMaterials";
 import { BatteryCharts } from "@/components/home/battery/batteryCharts";
@@ -18,7 +18,6 @@ export default function App({ battery }: AppProps) {
   return (
     <div className="flex w-full">
       <div className="flex w-full flex-col gap-5 p-10 pt-5">
-        <Header isInFirstSection title="Battery" icon={BatteryFull} />
         <BatteryInfo
           type={battery[1].type[1]}
           issuanceDate={issuanceDate}
@@ -27,7 +26,6 @@ export default function App({ battery }: AppProps) {
           voltageNominal={battery[1].credentialSubject.voltageNominal}
           lifeCycleStatus={battery[1].credentialSubject.lifeCycleStatus}
         />
-        <Header title="Materials" icon={Atom} />
         <BatteryMaterials
           activeMaterials={
             battery[1].credentialSubject.cellChemistry.anodeActiveMaterials
@@ -36,7 +34,6 @@ export default function App({ battery }: AppProps) {
             battery[1].credentialSubject.cellChemistry.electrolyteComposition
           }
         />
-        <Header title="Charts" icon={Atom} />
         <BatteryCharts
           activeMaterials={
             battery[1].credentialSubject.cellChemistry.anodeActiveMaterials
@@ -45,7 +42,6 @@ export default function App({ battery }: AppProps) {
             battery[1].credentialSubject.cellChemistry.electrolyteComposition
           }
         />
-        <Header title="Performance Metrics" icon={ChartBarIncreasing} />
         <BatteryMetrics
           performanceMetrics={battery[0].credentialSubject.performanceMetrics}
           safetyDurabilityTests={
