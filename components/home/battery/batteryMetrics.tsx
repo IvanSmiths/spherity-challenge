@@ -1,11 +1,12 @@
 import CardTable from "@/components/ui/cards/card-table";
+import { KeyValuePair } from "@/types/types";
 
-interface BatteryMetricsProps {
-  performanceMetrics: { [key: string]: string };
-  safetyDurabilityTests: { [key: string]: string };
-  temperatureToleranceTests: { [key: string]: string };
-  batteryCellHomologation: { [key: string]: string };
-}
+type BatteryMetricsProps = {
+  performanceMetrics: KeyValuePair;
+  safetyDurabilityTests: KeyValuePair;
+  temperatureToleranceTests: KeyValuePair;
+  batteryCellHomologation: KeyValuePair;
+};
 
 export function BatteryMetrics({
   performanceMetrics,

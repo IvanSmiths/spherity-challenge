@@ -1,4 +1,4 @@
-import { Material } from "@/types/materialTypes";
+import { Material } from "@/types/types";
 import { HeaderContext } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown } from "lucide-react";

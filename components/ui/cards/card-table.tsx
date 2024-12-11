@@ -5,11 +5,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/cards/card";
+import { KeyValuePair } from "@/types/types";
 
 type CardContainerProps = {
   title?: string;
   description?: string;
-  content: { [key: string]: string };
+  content: KeyValuePair;
 };
 
 export default function CardTable({

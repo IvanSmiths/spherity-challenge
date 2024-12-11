@@ -15,7 +15,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/charts/chart";
-import { Material } from "@/types/materialTypes";
+import { Material } from "@/types/types";
 
 const chartConfig = {
   materialWeight: {

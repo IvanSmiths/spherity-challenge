@@ -1,10 +1,10 @@
 import { BarChart } from "@/components/ui/charts/bar-chart";
-import { Material } from "@/types/materialTypes";
+import { Material } from "@/types/types";
 
-interface BatteryChartsProps {
+type BatteryChartsProps = {
   activeMaterials: Material[];
   electrolyteComposition: Material[];
-}
+};
 
 export function BatteryCharts({
   activeMaterials,

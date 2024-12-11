@@ -1,7 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import { Material } from "@/types/materialTypes";
+import { Material } from "@/types/types";
 import { columnHeader } from "./columnHeader";
 
 export const materialsColumns: ColumnDef<Material>[] = [

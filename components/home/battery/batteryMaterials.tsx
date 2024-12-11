@@ -1,6 +1,6 @@
 import { DataTable } from "@/components/ui/table/data-table";
 import { materialsColumns } from "@/components/ui/table/columns";
-import { Material } from "@/types/materialTypes";
+import { Material } from "@/types/types";
 
 interface BatteryMaterialsProps {
   activeMaterials: Material[];
