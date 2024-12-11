@@ -68,6 +68,22 @@ export const links = {
           title: "More Data Section",
           url: "#More Data",
         },
+        {
+          title: "Proof",
+          url: "#Proof",
+        },
+        {
+          title: "Battery Cell Scan",
+          url: "#Battery Cell Scan",
+        },
+        {
+          title: "Housing and Cathode",
+          url: "#Housing and Cathode",
+        },
+        {
+          title: "Cathode and Anode",
+          url: "#Cathode and Anode",
+        },
       ],
     },
   ],

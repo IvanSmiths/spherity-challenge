@@ -14,7 +14,7 @@ interface BatteryAccordionProps {
 
 export function BatteryAccordion({ proof, label }: BatteryAccordionProps) {
   return (
-    <div className="flex flex-col gap-5">
+    <div id={label} className="flex flex-col gap-5">
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>{label}</AccordionTrigger>
