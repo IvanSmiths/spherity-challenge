@@ -1,12 +1,10 @@
-import Header from "@/components/home/header";
-import { Database } from "lucide-react";
 import { BatteryInfo } from "@/components/home/battery/batteryInfo";
 import { BatteryMaterials } from "@/components/home/battery/batteryMaterials";
 import { BatteryCharts } from "@/components/home/battery/batteryCharts";
 import { BatteryMetrics } from "@/components/home/battery/batteryMetrics";
-import { BatteryAccordion } from "@/components/home/battery/batteryAccordion";
 import { AppProps } from "@/types/types";
 import { FormattedDate } from "@/lib/formatDate";
+import BatteryAccordionWrapper from "@/components/home/battery/batteryAccordionWrapper";
 
 export default function App({ battery }: AppProps) {
   return (
@@ -48,20 +46,7 @@ export default function App({ battery }: AppProps) {
             battery[0].credentialSubject.batteryCellHomologation
           }
         />
-        <Header title="More Data" icon={Database} />
-        <BatteryAccordion label="Proof" data={battery[1].proof} />
-        <BatteryAccordion
-          label="Battery Cell Scan"
-          data={battery[0].credentialSubject.CTScans.batteryCellScan}
-        />
-        <BatteryAccordion
-          label="Housing and Cathode"
-          data={battery[0].credentialSubject.CTScans.housingAndTheCathode}
-        />{" "}
-        <BatteryAccordion
-          label="Cathode and Anode"
-          data={battery[0].credentialSubject.CTScans.casingCathodeAndAnode}
-        />
+        <BatteryAccordionWrapper battery={battery} />
       </div>
     </div>
   );

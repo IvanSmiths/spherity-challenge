@@ -36,7 +36,7 @@ type CredentialSubject = {
   };
 };
 
-type BatteryData = {
+export type BatteryData = {
   issuanceDate: string;
   type: string[];
   credentialSubject: CredentialSubject;
