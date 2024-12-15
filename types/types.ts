@@ -42,7 +42,3 @@ export type BatteryData = {
   credentialSubject: CredentialSubject;
   proof: KeyValuePair;
 };
-
-export type AppProps = {
-  battery: BatteryData[];
-};

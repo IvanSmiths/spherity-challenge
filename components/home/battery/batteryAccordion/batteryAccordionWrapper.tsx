@@ -1,7 +1,6 @@
-import React from "react";
 import Header from "@/components/home/header";
 import { Database } from "lucide-react";
-import { BatteryAccordion } from "@/components/home/battery/batteryAccordion";
+import { BatteryAccordion } from "./batteryAccordion";
 import { BatteryData } from "@/types/types";
 
 type BatteryAccordionWrapperProps = {
