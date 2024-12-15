@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/table/table";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { DataTableViewOptions } from "@/components/ui/table/dataTableviewOptions";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -64,6 +65,7 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-64"
         />
+        <DataTableViewOptions table={table} />
       </div>
       <Table>
         <TableHeader>
