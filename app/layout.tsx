@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme/theme-provider";
 import { ThemeToggle } from "@/components/ui/theme/theme-toggle";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Spherity Challenge",
