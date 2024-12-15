@@ -5,6 +5,7 @@ import {
   BarChart as RechartsBarChart,
   CartesianGrid,
   XAxis,
+  YAxis,
 } from "recharts";
 
 import {
@@ -39,12 +40,8 @@ export function BarChart({
       <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
         <RechartsBarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
-          <XAxis
-            dataKey="materialName"
-            tickLine={false}
-            tickMargin={10}
-            axisLine={false}
-          />
+          <XAxis dataKey="materialName" tickLine={true} tickMargin={10} />
+          <YAxis tickLine={true} tickMargin={10} />
           <ChartTooltip content={<ChartTooltipContent />} />
           <ChartLegend content={<ChartLegendContent />} />
           <Bar dataKey="materialWeight" fill="#1a3fe6" radius={4} />
