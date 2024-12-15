@@ -5,10 +5,11 @@ import {
   CardTitle,
 } from "@/components/ui/cards/card";
 import { CircleCheckBig, CircleX } from "lucide-react";
+import { type ReactNode } from "react";
 
 type CardContainerProps = {
   title: string;
-  description: string;
+  description: string | ReactNode;
 };
 
 export default function CardWrapper({

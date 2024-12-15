@@ -6,20 +6,15 @@ import { BatteryCharts } from "@/components/home/battery/batteryCharts";
 import { BatteryMetrics } from "@/components/home/battery/batteryMetrics";
 import { BatteryAccordion } from "@/components/home/battery/batteryAccordion";
 import { AppProps } from "@/types/types";
+import { FormattedDate } from "@/lib/formatDate";
 
 export default function App({ battery }: AppProps) {
-  const issuanceDate: string = new Intl.DateTimeFormat("en-US", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(battery[1].issuanceDate));
-
   return (
     <div className="flex w-full">
       <div className="flex w-full flex-col gap-5 p-10 pt-5">
         <BatteryInfo
           type={battery[1].type[1]}
-          issuanceDate={issuanceDate}
+          issuanceDate={<FormattedDate date={battery[1].issuanceDate} />}
           ratedCapacity={battery[1].credentialSubject.ratedCapacity}
           voltageMaximum={battery[1].credentialSubject.voltageMaximum}
           voltageNominal={battery[1].credentialSubject.voltageNominal}
