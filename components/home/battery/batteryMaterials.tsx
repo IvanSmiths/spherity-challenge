@@ -3,7 +3,6 @@ import { materialsColumns } from "@/components/ui/table/columns";
 import { Material } from "@/types/types";
 import Header from "@/components/home/header";
 import { Atom } from "lucide-react";
-import React from "react";
 
 type BatteryMaterialsProps = {
   activeMaterials: Material[];

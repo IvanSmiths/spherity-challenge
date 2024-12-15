@@ -2,7 +2,6 @@ import { Badge } from "@/components/ui/badge";
 import CardWrapper from "@/components/ui/cards/card-wrapper";
 import Header from "@/components/home/header";
 import { BatteryFull } from "lucide-react";
-import React from "react";
 
 type BatteryInfoProps = {
   type: string;

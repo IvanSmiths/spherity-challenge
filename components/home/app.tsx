@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "@/components/home/header";
 import { Database } from "lucide-react";
 import { BatteryInfo } from "@/components/home/battery/batteryInfo";

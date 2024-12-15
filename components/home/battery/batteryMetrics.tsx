@@ -2,7 +2,6 @@ import CardTable from "@/components/ui/cards/card-table";
 import { KeyValuePair } from "@/types/types";
 import Header from "@/components/home/header";
 import { ChartBarIncreasing } from "lucide-react";
-import React from "react";
 
 type BatteryMetricsProps = {
   performanceMetrics: KeyValuePair;

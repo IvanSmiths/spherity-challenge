@@ -1,4 +1,3 @@
-import React from "react";
 import { SidebarTrigger } from "@/components/ui/sidebar/sidebar";
 import { Separator } from "@/components/ui/separator";
 import { BreadcrumbWrapper } from "@/components/ui/breadcrumb/breadcrumb-wrapper";

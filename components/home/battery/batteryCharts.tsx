@@ -2,7 +2,6 @@ import { BarChart } from "@/components/ui/charts/bar-chart";
 import { Material } from "@/types/types";
 import Header from "@/components/home/header";
 import { Atom } from "lucide-react";
-import React from "react";
 
 type BatteryChartsProps = {
   activeMaterials: Material[];

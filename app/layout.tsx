@@ -1,4 +1,3 @@
-import React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme/theme-provider";
