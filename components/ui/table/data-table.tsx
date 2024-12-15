@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/table/table";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { DataTableViewOptions } from "@/components/ui/table/dataTableviewOptions";
+import { DataTableViewOptions } from "@/components/ui/table/data-table-view-options";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

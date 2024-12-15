@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Material } from "@/types/types";
-import { columnHeader } from "./columnHeader";
+import { columnHeader } from "./column-header";
 
 export const materialsColumns: ColumnDef<Material>[] = [
   {
