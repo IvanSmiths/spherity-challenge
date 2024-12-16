@@ -1,3 +1,5 @@
+import { BatteryData } from "@/types/types";
+
 const API_BATTERY_ENDPOINT: string | undefined =
   process.env.API_BATTERY_ENDPOINT;
 
@@ -5,7 +7,7 @@ if (!API_BATTERY_ENDPOINT) {
   throw new Error("API endpoint is not defined.");
 }
 
-export async function getBattery() {
+export async function getBattery(): Promise<BatteryData[]> {
   const res: Response = await fetch(`${API_BATTERY_ENDPOINT}`, {
     cache: "force-cache",
   });

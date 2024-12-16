@@ -2,19 +2,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar/sidebar";
 import { Separator } from "@/components/ui/separator";
 import { BreadcrumbWrapper } from "@/components/ui/breadcrumb/breadcrumb-wrapper";
 import { Button } from "@/components/ui/button";
-
-type CertificationFile = {
-  fileUrl: string;
-  fileName: string;
-};
-
-type CredentialSubject = {
-  certificationFiles: CertificationFile[];
-};
-
-type BatteryData = {
-  credentialSubject: CredentialSubject;
-};
+import { BatteryData } from "@/types/types";
 
 type SidebarHeaderProps = {
   battery: BatteryData[];

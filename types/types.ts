@@ -20,6 +20,12 @@ type CredentialSubject = {
   ratedCapacity: string;
   voltageMaximum: string;
   voltageNominal: string;
+  certificationFiles:[
+    {
+      fileUrl: string;
+      fileName: string;
+    }
+  ]
   lifeCycleStatus: string;
   cellChemistry: {
     anodeActiveMaterials: Material[];
