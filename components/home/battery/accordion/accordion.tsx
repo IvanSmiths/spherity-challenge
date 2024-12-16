@@ -5,9 +5,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import CardTable from "@/components/ui/cards/card-table";
+import { KeyValuePair } from "@/types/types";
 
 type BatteryAccordionProps = {
-  data: { [key: string]: string };
+  data: KeyValuePair;
   label: string;
 };
 
