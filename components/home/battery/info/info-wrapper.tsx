@@ -1,4 +1,4 @@
-import { FormattedDate } from "@/lib/formatDate";
+import { FormattedDate } from "@/lib/format-date";
 import { Info } from "./info";
 import { BatteryData } from "@/types/types";
 

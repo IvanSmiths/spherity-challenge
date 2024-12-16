@@ -1,6 +1,6 @@
 import { AppSidebar } from "@/components/ui/sidebar/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar/sidebar";
-import { getBattery } from "@/services/getBattery";
+import { getBattery } from "@/services/get-battery";
 import SidebarHeader from "@/components/home/sidebar-header";
 import App from "@/components/home/app";
 
