@@ -16,7 +16,7 @@ export function Materials({
   return (
     <>
       <Header title="Materials" icon={Atom} />
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 xl:flex-row">
         <DataTable
           title="Active Materials"
           columns={materialsColumns}
