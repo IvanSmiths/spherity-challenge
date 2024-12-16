@@ -48,6 +48,16 @@ export function AreaChart({
       <CardContent>
         <ChartContainer config={chartConfig}>
           <AreaChartRecharts accessibilityLayer data={chartData}>
+            <defs>
+              <linearGradient id="fillActive" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#1a3fe6" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#1a3fe6" stopOpacity={0.1} />
+              </linearGradient>
+              <linearGradient id="fillElect" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#6f88e6" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#6f88e6" stopOpacity={0.1} />
+              </linearGradient>
+            </defs>
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="materialName"
@@ -63,14 +73,14 @@ export function AreaChart({
             <Area
               dataKey="materialWeight"
               type="natural"
-              fill="#1a3fe6"
+              fill="url(#fillActive)"
               stroke="#1a3fe6"
               fillOpacity={0.8}
             />
             <Area
               dataKey="materialPercentageMassFraction"
               type="natural"
-              fill="#6f88e6"
+              fill="url(#fillElect)"
               stroke="#6f88e6"
               fillOpacity={0.8}
             />
