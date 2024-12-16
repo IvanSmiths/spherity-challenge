@@ -3,9 +3,10 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar/sidebar";
 import { getBattery } from "@/services/get-battery";
 import SidebarHeader from "@/components/home/sidebar-header";
 import App from "@/components/home/app";
+import { BatteryData } from "@/types/types";
 
 export default async function Home() {
-  let battery = null;
+  let battery: BatteryData[] | null = null;
   try {
     battery = await getBattery();
   } catch (error) {
