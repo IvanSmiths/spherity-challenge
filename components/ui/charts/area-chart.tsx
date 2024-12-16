@@ -43,7 +43,7 @@ export function AreaChart({
   return (
     <Card dimensions="wide" className="h-full">
       <CardHeader>
-        <CardTitle>{label}</CardTitle>
+        <CardTitle className="text-xl">{label}</CardTitle>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
