@@ -1,16 +1,14 @@
 import { FormattedDate } from "@/lib/formatDate";
-import { BatteryInfo } from "./batteryInfo";
+import { Info } from "./info";
 import { BatteryData } from "@/types/types";
 
 type BatteryInfoWrapperProps = {
   battery: BatteryData[];
 };
 
-export default function BatteryInfoWrapper({
-  battery,
-}: BatteryInfoWrapperProps) {
+export default function InfoWrapper({ battery }: BatteryInfoWrapperProps) {
   return (
-    <BatteryInfo
+    <Info
       type={battery[1].type[1]}
       issuanceDate={<FormattedDate date={battery[1].issuanceDate} />}
       ratedCapacity={battery[1].credentialSubject.ratedCapacity}

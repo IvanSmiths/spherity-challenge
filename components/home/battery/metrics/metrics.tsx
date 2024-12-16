@@ -10,7 +10,7 @@ type BatteryMetricsProps = {
   batteryCellHomologation: KeyValuePair;
 };
 
-export function BatteryMetrics({
+export function Metrics({
   performanceMetrics,
   safetyDurabilityTests,
   temperatureToleranceTests,

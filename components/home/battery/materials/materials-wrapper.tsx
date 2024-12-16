@@ -1,15 +1,13 @@
-import { BatteryCharts } from "./batteryCharts";
 import { BatteryData } from "@/types/types";
+import { Materials } from "./materials";
 
-type BatteryChartsWrapperProps = {
+type BatteryMaterialsWrapperProps = {
   battery: BatteryData[];
 };
 
-export default function BatteryChartsWrapper({
-  battery,
-}: BatteryChartsWrapperProps) {
+function MaterialsWrapper({ battery }: BatteryMaterialsWrapperProps) {
   return (
-    <BatteryCharts
+    <Materials
       activeMaterials={
         battery[1].credentialSubject.cellChemistry.anodeActiveMaterials
       }
@@ -19,3 +17,5 @@ export default function BatteryChartsWrapper({
     />
   );
 }
+
+export default MaterialsWrapper;

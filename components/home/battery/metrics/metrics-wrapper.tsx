@@ -1,13 +1,13 @@
-import { BatteryMetrics } from "./batteryMetrics";
+import { Metrics } from "./metrics";
 import { BatteryData } from "@/types/types";
 
 type BatteryMetricsWrapperProps = {
   battery: BatteryData[];
 };
 
-function BatteryMetricsWrapper({ battery }: BatteryMetricsWrapperProps) {
+function MetricsWrapper({ battery }: BatteryMetricsWrapperProps) {
   return (
-    <BatteryMetrics
+    <Metrics
       performanceMetrics={battery[0].credentialSubject.performanceMetrics}
       safetyDurabilityTests={battery[0].credentialSubject.safetyDurabilityTests}
       temperatureToleranceTests={
@@ -20,4 +20,4 @@ function BatteryMetricsWrapper({ battery }: BatteryMetricsWrapperProps) {
   );
 }
 
-export default BatteryMetricsWrapper;
+export default MetricsWrapper;

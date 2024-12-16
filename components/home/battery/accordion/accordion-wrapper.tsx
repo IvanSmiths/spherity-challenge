@@ -1,28 +1,28 @@
 import Header from "@/components/home/header";
 import { Database } from "lucide-react";
-import { BatteryAccordion } from "./batteryAccordion";
+import { Accordion } from "./accordion";
 import { BatteryData } from "@/types/types";
 
 type BatteryAccordionWrapperProps = {
   battery: BatteryData[];
 };
 
-export default function BatteryAccordionWrapper({
+export default function AccordionWrapper({
   battery,
 }: BatteryAccordionWrapperProps) {
   return (
     <>
       <Header title="More Data" icon={Database} />
-      <BatteryAccordion label="Proof" data={battery[1].proof} />
-      <BatteryAccordion
+      <Accordion label="Proof" data={battery[1].proof} />
+      <Accordion
         label="Battery Cell Scan"
         data={battery[0].credentialSubject.CTScans.batteryCellScan}
       />
-      <BatteryAccordion
+      <Accordion
         label="Housing and Cathode"
         data={battery[0].credentialSubject.CTScans.housingAndTheCathode}
       />{" "}
-      <BatteryAccordion
+      <Accordion
         label="Cathode and Anode"
         data={battery[0].credentialSubject.CTScans.casingCathodeAndAnode}
       />

@@ -9,7 +9,7 @@ type BatteryMaterialsProps = {
   electrolyteComposition: Material[];
 };
 
-export function BatteryMaterials({
+export function Materials({
   activeMaterials,
   electrolyteComposition,
 }: BatteryMaterialsProps) {

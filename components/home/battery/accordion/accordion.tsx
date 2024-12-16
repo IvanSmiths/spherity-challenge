@@ -1,5 +1,5 @@
 import {
-  Accordion,
+  Accordion as AccordionPrimitive,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
@@ -11,17 +11,17 @@ type BatteryAccordionProps = {
   label: string;
 };
 
-export function BatteryAccordion({ data, label }: BatteryAccordionProps) {
+export function Accordion({ data, label }: BatteryAccordionProps) {
   return (
     <div id={label} className="flex flex-col gap-5">
-      <Accordion type="single" collapsible className="w-full">
+      <AccordionPrimitive type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>{label}</AccordionTrigger>
           <AccordionContent>
             <CardTable content={data} />
           </AccordionContent>
         </AccordionItem>
-      </Accordion>
+      </AccordionPrimitive>
     </div>
   );
 }

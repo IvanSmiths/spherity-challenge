@@ -13,7 +13,7 @@ type BatteryInfoProps = {
   lifeCycleStatus: string;
 };
 
-export function BatteryInfo({
+export function Info({
   type,
   issuanceDate,
   ratedCapacity,
